@@ -8,8 +8,8 @@ global tank_drive
 tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
 
 NUM_LAPS = 2
-LAP_DISTANCE = 12.7
-INCHES_TO_ROTATION = (1/5.25)
+LAP_DISTANCE = 12.7 #calibrate this metric
+INCHES_TO_ROTATION = (1/5.25) #this too
 CM_TO_ROTATION = INCHES_TO_ROTATION * (1/2.54)
 POWER = 50
 
