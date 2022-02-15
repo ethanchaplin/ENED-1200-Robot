@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 NUM_LAPS = 2
 LAP_DISTANCE = 5
 INCHES_TO_ROTATION = (1/5.25)
