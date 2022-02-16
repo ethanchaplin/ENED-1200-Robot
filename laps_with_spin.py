@@ -3,7 +3,8 @@
 
 from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_B
 import CalibratedConstants as calib
-
+NUM_LAPS = 4
+LAP_DISTANCE = 90
 global tank_drive 
 tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
 
@@ -15,9 +16,9 @@ def TURN(n):
 
 def LAPS(n):
     for i in range(0, n):
-        tank_drive.on_for_rotations(calib.POWER, calib.POWER, calib.LAP_DISTANCE * calib.INCHES_TO_ROTATION)
+        tank_drive.on_for_rotations(calib.POWER, calib.POWER, LAP_DISTANCE * calib.CM_TO_ROTATION)
         TURN(180)
-
-LAPS(1)
-TURN(180)
+        tank_drive.on_for_rotations(calib.POWER, calib.POWER, LAP_DISTANCE * calib.CM_TO_ROTATION)
+        TURN(180)
+LAPS(NUM_LAPS)
 
